@@ -88,7 +88,7 @@ const getTodayWeather = async (position) => {
     body: JSON.stringify(coord)
   };
 
-  const response = await fetch('/onload', options);
+  const response = await fetch('https://mydearpage-api.cyclic.app/onload', options);
   const data = await response.json();
   // console.log(data);
 
@@ -172,7 +172,7 @@ const getWeatherByCityName = async (event) => {
       },
       body: JSON.stringify(cityNamecountryCode)
     };
-    const response = await fetch('/cityname', options);
+    const response = await fetch('https://mydearpage-api.cyclic.app/cityname', options);
     const data = await response.json();
     // console.log(data);
 
