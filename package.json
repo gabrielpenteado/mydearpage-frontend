@@ -1,0 +1,16 @@
+{
+  "name": "mydearpage-frontend",
+  "version": "1.0.0",
+  "description": "mydearpage front-end",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon src/index.js",
+    "start": "node src/index.js"
+  },
+  "keywords": [],
+  "author": "Gabriel Penteado",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}

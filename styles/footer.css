@@ -1,0 +1,330 @@
+.footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+ }
+
+/* BACKGROUND ELEMENT */
+.changeBackground {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.phrase {
+  position: relative;
+  font-size: 20px;
+  font-weight: lighter;
+  bottom: 12px;
+}
+
+.backgButtons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.manually {
+  position: relative;
+  top: 13px;
+  background-color: azure;
+  padding: 8px;
+  color: black;
+  border-radius: 10px;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: inset -1px -1px 2px 1px rgba(0, 0, 0, 0.5),
+                      2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.clickClass {
+  background-color:rgb(105, 209, 1);
+  box-shadow: none;
+}
+
+.daily p {
+  position: relative;
+  font-size: 18px;
+  left: 10px;
+  cursor: pointer;
+  padding-bottom: 2px;
+}
+
+.weekly p {
+  font-size: 18px;
+  cursor: pointer;
+  padding-bottom: 2px;
+}
+
+
+.switch{
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 30px;
+}
+
+ .slider {
+  position: absolute;
+  cursor: pointer;
+  background-color: #cccccc;
+  transition: .4s;
+  border-radius: 34px;
+  width: 60px;
+  height: 32px;
+}
+
+.switch input {
+  display: none;
+}
+
+.slider::before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 3px;
+  bottom: 3px;
+  background-color: #ffffff;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: rgb(105, 209, 1);
+}
+
+input:checked + .slider:before {
+  transform: translateX(28px);
+}
+
+/* DATE/CLOCK ELEMENT  */ 
+.time {
+  text-align: center;
+  position: relative;
+  transition: 400ms ease-in-out;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.time:hover {
+transform: scaleX(1.33) scaleY(1.33);
+}
+
+.date {
+  font-size: 20px;
+}
+
+.clock {
+  font-size: 50px;
+}
+
+/* ABOUT ME ELEMENT */
+.aboutMe {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+}
+
+.gabrielpenteado {
+  bottom: 20px;
+  position: relative;
+}
+
+.mycontacts {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 70px;
+  position: absolute;
+}
+
+.mycontacts .contactButton {
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+  margin: 0 10px;
+  box-sizing: border-box;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, .1);
+  transition: all 0.3s ease-out;
+  overflow: hidden;
+}
+
+.mycontacts .contactButton a {
+  text-decoration: none;
+}
+
+.mycontacts .contactButton:nth-child(1):hover {
+  border: 1px solid #1877f2;
+  width: 160px;
+}
+
+.mycontacts .contactButton:nth-child(2):hover {
+  border: 1px solid #171515;
+  width: 150px;
+}
+
+.mycontacts .contactButton:nth-child(3):hover {
+  border: 1px solid #bb001b;
+  width: 280px;
+}
+
+.mycontacts .contactButton .iconcontact {
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  border-radius: 0 50px 50px;
+  color: black;
+  text-align: center;
+  line-height: 50px;
+}
+
+.mycontacts .contactButton:nth-child(1):hover .iconcontact {
+  background: #1877f2;
+}
+
+.mycontacts .contactButton:nth-child(2):hover .iconcontact {
+  background: #171515;
+}
+
+.mycontacts .contactButton:nth-child(3):hover .iconcontact {
+  background: #bb001b;
+}
+
+.mycontacts .contactButton .iconcontact i {
+  font-size: 30px;
+  line-height: 50px;
+}
+
+.mycontacts .contactButton:hover .iconcontact i {
+  color: white;
+} 
+
+.mycontacts .contactButton span {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 50px;
+  color: black;
+  position: relative;
+  bottom: 5px;
+}
+
+.mycontacts .contactButton:nth-child(1):hover span {
+  color: white;
+  margin-left: 10px;
+}
+
+.mycontacts .contactButton:nth-child(2):hover span {
+  color: white;
+  margin-left: 10px;
+}
+
+.mycontacts .contactButton:nth-child(3):hover span {
+  color: white;
+  margin-left: 10px;
+  font-size: 16px;
+  bottom: 7px;
+}
+
+
+
+
+
+
+
+
+
+/* MEDIA QUERIES */
+@media (max-width: 1366px) {
+
+  .manually,
+  .daily p,
+  .weekly p {
+    font-size: 16px;
+  }
+
+  .slider::before {
+    height: 22px;
+    width: 22px;
+  }
+
+  .slider {
+    width: 56px;
+    height: 28px;
+  }
+
+  .time:hover {
+    transform: scaleX(1.2) scaleY(1.2);
+  }
+
+}
+
+
+@media (max-width: 888px) {
+
+  .footer {
+    flex-direction: column;
+  }
+
+  .time {
+    display: none;
+  }
+
+  .backgButtons {
+    position: relative;
+    bottom: 12px;
+  }
+
+  .aboutMe {
+    bottom: 20px;
+  }
+
+  .gabrielpenteado {
+    bottom: 14px;
+  }
+
+}
+
+
+@media (max-width: 565px) {
+
+  .changeBackground {
+    display: none;
+  }
+
+  .mycontacts .contactButton:nth-child(1) .iconcontact {
+    background: #1877f2;
+    color: #ffffff;
+  }
+
+  .mycontacts .contactButton:nth-child(1):hover {
+    border: none;
+    width: 50px;
+  }
+
+  .mycontacts .contactButton:nth-child(2) .iconcontact {
+    background: #171515;
+    color: #ffffff;
+  }
+
+  .mycontacts .contactButton:nth-child(2):hover {
+    border: none;
+    width: 50px;
+  }
+
+  .mycontacts .contactButton:nth-child(3) .iconcontact {
+    background: #bb001b;
+    color: #ffffff;
+  }
+
+  .mycontacts .contactButton:nth-child(3):hover {
+    border: none;
+    width: 50px;
+  }
+
+}

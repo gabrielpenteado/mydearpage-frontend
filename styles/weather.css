@@ -1,0 +1,226 @@
+/* 1920 x 1080 */
+.weather {
+  display: grid;
+  grid-template-areas:
+  'localization localization'
+  'submitcityname submitcityname'
+  'todayIcon todayTemperature'
+  'nextDays nextDays';
+
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 0.7fr 3fr 3fr;
+}
+
+.local { 
+  grid-area: localization;
+  position: relative;
+  justify-self: center;
+  align-self: center;
+  font-size: 37px;
+}  
+
+.submitCityName {
+  grid-area: submitcityname;
+  position: relative;
+  align-self: center;
+  justify-self: center;
+}
+
+.submitCityName .fa-search {
+  position: relative;
+  font-size: 22px;
+  right: 30px;
+  top: 3.5px;
+  border-left: 1px solid #ffffff;
+  padding-left: 10px;
+  padding-right: 10px;
+  cursor: pointer;
+}
+
+.fa-circle-notch {
+  position: relative;
+  font-size: 22px;
+  right: 30px;
+  top: 3px;
+  cursor: pointer;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.inputCityName::placeholder {
+  color: #ffffff;
+  font-size: 16px ;
+  opacity: 0.55;
+}
+
+.inputCityName {
+  position: relative;
+  background: transparent;
+  color: #ffffff;
+  padding: 16px;
+  font-size: 16px;
+  width: 300px;
+  height: 35px;
+  border-radius: 8px;
+  outline: none;
+  backdrop-filter: blur(10px);
+  left: 22px;
+}
+
+.todayIcon {
+  grid-area: todayIcon;
+  display: grid;
+  align-items: center;
+  /* animation: weatherAnimation 800ms ease-in;  INSERTED WITH JS*/
+}
+
+.todayIcon img {
+  width: 200px;
+  justify-self: end;
+  margin-left: 45px;
+}
+
+@keyframes weatherAnimation {
+  0% {
+    opacity: 0;
+    transform: scale(.1);
+  }
+  100% {
+    opacity: 100%;
+    transform: scale(1);
+  }
+}
+
+.todayTemperature {
+  grid-area: todayTemperature;
+  display: grid;
+  padding-right: 70px;
+  /* animation: weatherAnimation 800ms ease-in;  INSERTED WITH JS*/
+}
+
+.todayTemperature .today {
+  font-size: 20px;
+}
+
+.todayTemperature p {
+  font-size: 47px;
+  align-self: end;
+  justify-self: center;
+  row-gap: 10px;
+}
+
+.todayTemperature h3 {
+  align-self: start;
+  justify-self: center;
+  font-size: 17px;
+  margin-left: 5px;
+}
+
+.nextDays {
+  grid-area: nextDays;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-evenly;
+  /* animation: weatherAnimation 800ms ease-in; INSERTED WITH JS */
+}
+
+.nextDays .dayOfWeek {
+  display: flex;
+  justify-content: center;
+}
+
+.nextDays .maxmin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nextDays .fa-arrows-alt-v {
+  font-size: 16px;
+  transform: scale(1, 2);
+  
+}
+ 
+.nextDays .maxmin p {
+  padding: 2px;
+  padding-left: 8px;
+}
+
+
+
+
+
+
+
+
+
+/* MEDIA QUERIES */
+@media (max-width: 1366px) {
+
+  .local {
+    padding: 6px;
+    font-size: 32px;
+  }
+
+  .todayTemperature p {
+    font-size: 42px;
+  }
+
+  .todayTemperature h3 {
+    font-size: 14px;
+    margin-left: 0;
+  }
+
+  .nextDays {
+    position: relative;
+    bottom: 10px;
+    padding: 0 8px;
+    font-size: 12px;
+  }
+  
+}
+
+
+@media (max-width: 888px) {
+
+  .weather {
+    grid-template-rows: none;
+  }
+
+  .todayIcon img {
+    width: 170px;
+  }
+
+  .nextDays {
+    bottom: 20px;
+  }
+
+}
+
+
+@media (max-width: 565px) {
+
+  .local {
+    font-size: 28px;
+  }
+  
+  .nextDays {
+    padding: 0;
+    right: 1px;
+  }
+}
+
+@media (max-width: 375px) {
+
+  .nextDays {
+    transform: scaleX(0.9) scaleY(0.9);
+    right: 10px;
+  }
+  
+}
+
+
+
+
+
+

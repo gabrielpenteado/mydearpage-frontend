@@ -1,0 +1,573 @@
+
+/* DAFAULT 1920 x 1080 */
+
+/* HEADER */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* NAV */
+nav {
+  width: 100%;
+}
+
+nav ul {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding-top: 20px;
+  flex-wrap: wrap;
+}
+
+nav ul li {
+  list-style: none;
+  font-size: 45px;
+}
+
+nav ul li a {
+  position: relative;
+  display: flex;
+  text-decoration: none;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  transition: 0.2s;
+  border-width: thick;
+  box-shadow: inset -1px -1px 2px 1px rgba(0, 0, 0, 0.5),
+                      2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* ICONS BEFORE HOVER */
+nav ul li i {
+  position: relative;
+  color: #bdbdbd;
+}
+
+.fa-google {
+  font-size: 50px;
+}
+
+.gmail {
+  content: url(/assets/heather-icons/gmail-initial.svg);
+  width: 56px;
+}
+
+.outlook {
+  content: url(/assets/heather-icons/outlook-initial.svg);
+  width: 56px;
+}
+
+.fa-whatsapp {
+  font-size: 50px;
+}
+
+.fa-amazon {
+  font-size: 50px;
+}
+
+.fa-facebook-f {
+  font-size: 60px;
+  padding-top: 16px;
+}
+
+.fa-yahoo {
+  font-size: 50px;
+}
+
+.fa-telegram-plane {
+  font-size: 50px;
+  padding-right: 5px;
+}
+
+.fa-reddit-alien {
+  font-size: 55px;
+}
+
+.githubHeader {
+  content: url(/assets/heather-icons/github.svg);
+  width: 68px;
+  padding-top: 9px;
+}
+
+.fa-instagram {
+  font-size: 55px;
+}
+
+.fa-pinterest-p {
+  font-size: 62px;
+  padding-top: 10px;
+}
+
+.aliexpress {
+  content: url(/assets/heather-icons/aliexpress-initial.svg);
+  width: 44px;
+}
+
+.fa-spotify {
+  font-size: 58px;
+}
+
+.fa-stack-overflow {
+  font-size: 55px;
+}
+
+.bing {
+  content: url(/assets/heather-icons/bing-initial.svg);
+  width: 54px;
+  padding-left: 5px;
+}
+
+/* ICONS HOOVER */
+
+nav ul li a:hover {
+  transform: translateY(-10px);
+}
+
+/* GOOGLE HOVER */
+
+nav ul li:nth-child(1) a:hover {
+  background-color: #eeeeee;
+}
+
+nav ul li:nth-child(1) a:hover i {
+  content: url(/assets/heather-icons/google.svg);
+  width: 56px;
+}
+
+/* FACEBOOK HOVER */
+
+nav ul li:nth-child(2) a:hover {
+  background-color: #1877f2;
+}
+
+nav ul li:nth-child(2) a:hover i {
+  color: #ffffff;
+}
+
+/* YAHOO HOVER */
+
+nav ul li:nth-child(3) a:hover {
+  background-color: #6001d2;
+}
+
+nav ul li:nth-child(3) a:hover i {
+  color: #ffffff;
+}
+
+/* YOUTUBE HOVER */
+
+nav ul li:nth-child(4) a:hover {
+  background-color: #ff0000;
+}
+
+nav ul li:nth-child(4) a:hover i {
+  color: #ffffff;
+}
+
+/* WHATSAPP HOVER */
+
+nav ul li:nth-child(5) a:hover {
+  background-color: #25d366;
+}
+
+nav ul li:nth-child(5) a:hover i {
+  color: #ffffff;
+}
+
+/* TWITTER HOVER */
+
+nav ul li:nth-child(6) a:hover {
+  background-color: #1da1f2;
+}
+
+nav ul li:nth-child(6) a:hover i {
+  color: #ffffff;
+}
+
+/* INSTAGRAM HOVER */
+
+nav ul li:nth-child(7) a:hover {
+  /* background: #f09433;  */
+  content: url(/assets/heather-icons/instagram.svg);
+}
+
+nav ul li:nth-child(7) a:hover i {
+  color: #ffffff;
+}
+
+/* TELEGRAM HOVER */
+
+nav ul li:nth-child(8) a:hover {
+  background-color: #0088cc;
+}
+
+nav ul li:nth-child(8) a:hover i {
+  color: #ffffff;
+}
+
+/* AMAZON HOVER */
+
+nav ul li:nth-child(9) a:hover {
+  background-color: #ff9900;
+}
+
+nav ul li:nth-child(9) a:hover i {
+  color: #000000;
+}
+
+/* TWITCH HOVER*/
+
+nav ul li:nth-child(10) a:hover {
+  background-color: #9146ff;
+}
+
+nav ul li:nth-child(10) a:hover i {
+  color: #ffffff;
+}
+
+/* LINKEDIN HOVER*/
+
+nav ul li:nth-child(11) a:hover {
+  background-color: #0a66c2;
+}
+
+nav ul li:nth-child(11) a:hover i {
+  color: #ffffff;
+}
+
+/* WIKIPEDIA HOVER */
+
+nav ul li:nth-child(12) a:hover {
+  background-color: #dddddd;
+}
+
+nav ul li:nth-child(12) a:hover i {
+  color: #000000;
+}
+
+/* GMAIL HOVER */
+
+nav ul li:nth-child(13) a:hover {
+  background-color: #eeeeee;
+}
+
+nav ul li:nth-child(13) a:hover i {
+  content: url(/assets/heather-icons/gmail-hover.svg);
+}
+
+/* OUTLOOK HOVER */
+
+nav ul li:nth-child(14) a:hover {
+  background-color: #0072C6;
+}
+
+nav ul li:nth-child(14) a:hover i {
+  content: url(/assets/heather-icons/outlook-hover.svg);
+}
+
+/* REEDIT HOVER */
+
+nav ul li:nth-child(15) a:hover {
+  background-color: #ff4500;
+}
+
+nav ul li:nth-child(15) a:hover i {
+  color: #ffffff;
+}
+
+/* TIKTOK HOVER */
+
+nav ul li:nth-child(16) a:hover {
+  background-color: #010101;
+}
+
+nav ul li:nth-child(16) a:hover i {
+  content: url(/assets/heather-icons/tiktok.svg);
+  width: 50px;
+}
+
+/* GITHUB HOVER */
+
+nav ul li:nth-child(17) a:hover {
+  background-color: #171515;
+}
+
+nav ul li:nth-child(17) a:hover i {
+  content: url(/assets/heather-icons/github-hover.svg);
+  width: 68px;
+  color: #ffffff;
+
+}
+/* PINTEREST HOVER */
+
+nav ul li:nth-child(18) a:hover {
+  background-color: #bd081c;
+}
+
+nav ul li:nth-child(18) a:hover i {
+  color: #ffffff;
+}
+
+/* ALIEXPRESS HOVER */
+
+nav ul li:nth-child(19) a:hover {
+  background-color: #eeeeee;
+}
+
+nav ul li:nth-child(19) a:hover i {
+  content: url(/assets/heather-icons/aliexpress-hover.svg);
+  width: 46px;
+}
+
+/* SPOTIFY HOVER */
+
+nav ul li:nth-child(20) a:hover {
+  background-color: #eeeeee;
+}
+
+nav ul li:nth-child(20) a:hover i {
+  width: 58px;
+  color: #1ed760;
+}
+
+/* STACKOVERFLOW HOVER */
+
+nav ul li:nth-child(21) a:hover {
+  background-color: #eeeeee;
+}
+
+nav ul li:nth-child(21) a:hover i {
+  color: #ef8236;
+}
+
+/* STACKOVERFLOW HOVER */
+
+nav ul li:nth-child(22) a:hover {
+  background-color: #eeeeee;
+}
+
+nav ul li:nth-child(22) a:hover i {
+  content: url(/assets/heather-icons/bing-hover.svg);
+}
+
+
+
+
+
+
+
+
+
+
+/* MEDIA QUERIES */
+@media (max-width: 1366px) {
+
+  nav ul li a {
+    width: 60px;
+    height: 60px;
+  }
+
+  nav ul li {
+    list-style: none;
+    font-size: 40px;
+  }
+
+  .fa-google {
+    font-size: 40px;
+  }
+
+  .gmail {
+    width: 48px;
+  }
+
+  .outlook {
+    width: 46px;
+  }
+  
+  .fa-whatsapp {
+    font-size: 46px;
+  }
+  
+  .fa-amazon {
+    font-size: 46px;
+  }
+  
+  .fa-facebook-f {
+    font-size: 46px;
+    padding-top: 10px;
+  }
+  
+  .fa-yahoo {
+    font-size: 46px;
+  }
+
+  .fa-wikipedia-w {
+    padding-top: 4px;
+  }
+  
+  .fa-telegram-plane {
+    font-size: 45px;
+    padding-right: 8px;
+  }
+  
+  .fa-reddit-alien {
+    font-size: 46px;
+  }
+  
+  .githubHeader {
+    width: 50px;
+    padding-top: 6px;
+  }
+  
+  .fa-instagram {
+    font-size: 46px;
+  }
+  
+  .fa-pinterest-p {
+    font-size: 48px;
+    padding-top: 8px;
+  }
+  
+  .aliexpress {
+    width: 38px;
+  }
+  
+  .fa-spotify {
+    font-size: 46px;
+  }
+  
+  .fa-stack-overflow {
+    font-size: 46px;
+  }
+  
+  .bing {
+    width: 45px;
+    padding-left: 4px;
+  } 
+
+  /* GOOGLE HOVER */
+  nav ul li:nth-child(1) a:hover i {
+    width: 46px;
+  }
+
+  /* TIKTOK HOVER */
+  nav ul li:nth-child(16) a:hover i {
+    width: 45px;
+  }
+
+  /* GITHUB HOVER */
+  nav ul li:nth-child(17) a:hover i {
+    width: 52px;
+  }
+
+  /* ALIEXPRESS HOVER */
+  nav ul li:nth-child(19) a:hover i {
+    width: 38px;
+  }
+
+  /* SPOTIFY HOVER */
+  nav ul li:nth-child(20) a:hover i {
+    width: 44px;
+  }
+}
+
+
+@media (max-width: 888px) {
+  nav ul {
+    width: 100vw;
+  }
+
+  nav ul li:nth-child(5),
+  nav ul li:nth-child(6),
+  nav ul li:nth-child(7),
+  nav ul li:nth-child(8),
+  nav ul li:nth-child(10),
+  nav ul li:nth-child(12),
+  nav ul li:nth-child(13),
+  nav ul li:nth-child(14),
+  nav ul li:nth-child(15),
+  nav ul li:nth-child(16),
+  nav ul li:nth-child(18),
+  nav ul li:nth-child(20),
+  nav ul li:nth-child(22) {
+    display: none;
+  }
+}
+
+
+@media (max-width: 565px) {
+  nav ul li:nth-child(3),
+  nav ul li:nth-child(11),
+  nav ul li:nth-child(17),
+  nav ul li:nth-child(21) {
+    display: none;
+  }
+
+  nav ul li a:hover {
+    transform: none;
+  }
+
+  nav ul li:nth-child(1) a:hover {
+    background-color: white;
+  }
+
+  nav ul li:nth-child(1) a i {
+    content: url(/assets/heather-icons/google.svg);
+    width: 50px;
+  }
+
+  nav ul li:nth-child(1) a:hover i {
+    content: url(/assets/heather-icons/google.svg);
+    width: 50px;
+  }
+
+  nav ul li:nth-child(2) a {
+    background-color: #1877f2;
+  }
+  
+  nav ul li:nth-child(2) a i {
+    color: #ffffff;
+  }
+  
+  nav ul li:nth-child(4) a {
+    background-color: #ff0000;
+  }
+  
+  nav ul li:nth-child(4) a i {
+    color: #ffffff;
+  }
+
+  nav ul li:nth-child(9) a {
+    background-color: #ff9900;
+  }
+  
+  nav ul li:nth-child(9) a i {
+    color: #000000;
+  }
+
+  nav ul li:nth-child(19) a:hover {
+    background-color: white;
+  }
+  
+  nav ul li:nth-child(19) a i {
+    content: url(/assets/heather-icons/aliexpress-hover.svg);
+    width: 40px;
+  }
+
+  nav ul li:nth-child(19) a:hover i {
+    content: url(/assets/heather-icons/aliexpress-hover.svg);
+    width: 40px;
+  }
+
+  nav ul {
+    justify-content: space-evenly;
+  }
+
+}
+

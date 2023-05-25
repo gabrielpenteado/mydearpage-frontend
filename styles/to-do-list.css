@@ -1,0 +1,236 @@
+/* DEFAULT 1920 x 1080 */
+
+.to-do {
+  display: flex;
+  flex-direction: column;
+}
+
+.list {
+  width: 100%;
+  position: relative;
+}
+
+.item {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 19px;
+  background-color: transparent;
+  border-bottom: 2px solid #ffffff;
+  font-size: 20px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;   
+  word-break: break-word;
+}
+
+.item i {
+  margin: 3px 47px 0;
+}
+
+.item .textToDo {
+  position: relative;
+  margin-right: auto;
+  margin-left: 8px;
+  margin-top: 2px;
+}
+
+.lineThrough {
+  text-decoration: line-through red;
+}
+
+.fa-circle {
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.fa-check-circle {
+  font-size: 22px;
+  cursor: pointer;
+  color: green;
+  background: radial-gradient(white 40%, transparent 70%);
+}
+
+.fa-trash-alt {
+  font-size: 21px;
+  cursor: pointer;
+}
+
+.fa-trash-alt:hover {
+  color: #ff0000;
+}
+
+.addItem {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  margin-top: auto;
+  margin-bottom: 9px;
+  gap: 8px;
+}
+
+.fa-plus-circle {
+  font-size: 34px;
+  cursor: pointer;
+  /* animation: rotation 1s ease-out; INSERTED WITH JS*/
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(90deg);
+  }
+}
+
+.inputToDo {
+  background: transparent;
+  color: #ffffff;
+  font-size: 18px;
+  outline: none;
+  backdrop-filter: blur(10px);
+  width: 70%;
+  padding-left: 24px;
+}
+
+.inputToDo::placeholder {
+  color: #ffffff;
+  font-size: 18px ;
+  opacity: 0.55;
+}
+
+.fa-square {
+  font-size: 34px;
+  cursor: pointer;
+  transform: scale(1.2, 1);
+}
+
+.colorPallet {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.todoColors {
+  display: none;
+}
+
+.transparent {
+  background-color: transparent;
+}
+
+.colors {
+  opacity: 0;
+}
+
+@keyframes colorsEffect {
+  0% {
+    opacity: 0;
+    transform: rotateX(45deg) translateX(-25px);
+  }
+  100% {
+    opacity: 100%;
+    transform: rotateX(0deg) translateY(0deg);
+  }
+}
+
+.color1 {
+  color:blue; 
+}
+
+.color2 {
+  color:darkviolet; 
+}
+
+.color3 {
+  color:tomato; 
+}
+
+.color4 {
+  color:darkgoldenrod; 
+}
+
+.animation1 {  
+  animation: colorsEffect 400ms ease-in-out 150ms forwards;
+}
+
+.animation2 {  
+  animation: colorsEffect 400ms ease-in-out 300ms forwards;
+}
+
+.animation3 {  
+  animation: colorsEffect 400ms ease-in-out 450ms forwards;
+}
+
+.animation4 {  
+  animation: colorsEffect 400ms ease-in-out 600ms forwards;
+}
+
+.fa-sync-alt {
+  font-size: 34px;
+  cursor: pointer;
+}
+
+.fa-sync-alt .fa-spin {
+  font-size: 34px;
+}
+
+
+
+
+
+
+
+
+
+/* MEDIA QUERIES */
+@media (max-width: 1366px) {
+
+  .fa-plus-circle {
+    position: relative;
+    left: 2px;
+  }
+
+  .inputToDo {
+    width: 65%;
+    font-size: 16px;
+  }
+
+  .item .textToDo {
+    position: relative;
+    margin: auto;
+    margin-left: 1px;
+    margin-top: 2px;
+  }
+
+  .fa-sync-alt {
+    position: relative;
+    right: 4px;
+  }
+
+  .item {
+    padding: 6px 7px;
+  }
+
+  .fa-circle {
+    font-size: 20px;
+  }
+
+  .fa-trash-alt {
+    font-size: 19px;
+  }
+
+  .fa-check-circle {
+    font-size: 20px;
+  }
+  
+}
+
+
+@media (max-width: 888px) {
+
+  .to-do {
+    display: none;
+  }
+  
+}
