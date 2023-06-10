@@ -1,5 +1,5 @@
 <h2 align="center">
-  The front-end project to connect with <em>mydearpage-api</em> repository.
+  The front-end project to connect with <em><a href="https://github.com/gabrielpenteado/mydearpage-api">mydearpage-api</a></em> repository.
 </h2>
 
 <div align="center">
