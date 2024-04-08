@@ -1,4 +1,3 @@
-
 /* DAFAULT 1920 x 1080 */
 
 /* HEADER */
@@ -40,7 +39,7 @@ nav ul li a {
   transition: 0.2s;
   border-width: thick;
   box-shadow: inset -1px -1px 2px 1px rgba(0, 0, 0, 0.5),
-                      2px 2px 5px rgba(0, 0, 0, 0.5);
+    2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 /* ICONS BEFORE HOVER */
@@ -81,8 +80,8 @@ nav ul li i {
 }
 
 .fa-telegram-plane {
-  font-size: 50px;
-  padding-right: 5px;
+  font-size: 54px;
+  /* padding-right: 5px; */
 }
 
 .fa-reddit-alien {
@@ -180,10 +179,11 @@ nav ul li:nth-child(5) a:hover i {
   color: #ffffff;
 }
 
-/* TWITTER HOVER */
+/* X/TWITTER HOVER */
 
 nav ul li:nth-child(6) a:hover {
-  background-color: #1da1f2;
+  /* background-color: #1da1f2; */
+  background-color: #000000;
 }
 
 nav ul li:nth-child(6) a:hover i {
@@ -264,7 +264,7 @@ nav ul li:nth-child(13) a:hover i {
 /* OUTLOOK HOVER */
 
 nav ul li:nth-child(14) a:hover {
-  background-color: #0072C6;
+  background-color: #0072c6;
 }
 
 nav ul li:nth-child(14) a:hover i {
@@ -302,7 +302,6 @@ nav ul li:nth-child(17) a:hover i {
   content: url(/assets/heather-icons/github-hover.svg);
   width: 68px;
   color: #ffffff;
-
 }
 /* PINTEREST HOVER */
 
@@ -356,18 +355,8 @@ nav ul li:nth-child(22) a:hover i {
   content: url(/assets/heather-icons/bing-hover.svg);
 }
 
-
-
-
-
-
-
-
-
-
 /* MEDIA QUERIES */
 @media (max-width: 1366px) {
-
   nav ul li a {
     width: 60px;
     height: 60px;
@@ -389,20 +378,20 @@ nav ul li:nth-child(22) a:hover i {
   .outlook {
     width: 46px;
   }
-  
+
   .fa-whatsapp {
     font-size: 46px;
   }
-  
+
   .fa-amazon {
     font-size: 46px;
   }
-  
+
   .fa-facebook-f {
     font-size: 46px;
     padding-top: 10px;
   }
-  
+
   .fa-yahoo {
     font-size: 46px;
   }
@@ -410,46 +399,46 @@ nav ul li:nth-child(22) a:hover i {
   .fa-wikipedia-w {
     padding-top: 4px;
   }
-  
+
   .fa-telegram-plane {
     font-size: 45px;
     padding-right: 8px;
   }
-  
+
   .fa-reddit-alien {
     font-size: 46px;
   }
-  
+
   .githubHeader {
     width: 50px;
     padding-top: 6px;
   }
-  
+
   .fa-instagram {
     font-size: 46px;
   }
-  
+
   .fa-pinterest-p {
     font-size: 48px;
     padding-top: 8px;
   }
-  
+
   .aliexpress {
     width: 38px;
   }
-  
+
   .fa-spotify {
     font-size: 46px;
   }
-  
+
   .fa-stack-overflow {
     font-size: 46px;
   }
-  
+
   .bing {
     width: 45px;
     padding-left: 4px;
-  } 
+  }
 
   /* GOOGLE HOVER */
   nav ul li:nth-child(1) a:hover i {
@@ -477,7 +466,6 @@ nav ul li:nth-child(22) a:hover i {
   }
 }
 
-
 @media (max-width: 888px) {
   nav ul {
     width: 100vw;
@@ -499,7 +487,6 @@ nav ul li:nth-child(22) a:hover i {
     display: none;
   }
 }
-
 
 @media (max-width: 565px) {
   nav ul li:nth-child(3),
@@ -530,15 +517,15 @@ nav ul li:nth-child(22) a:hover i {
   nav ul li:nth-child(2) a {
     background-color: #1877f2;
   }
-  
+
   nav ul li:nth-child(2) a i {
     color: #ffffff;
   }
-  
+
   nav ul li:nth-child(4) a {
     background-color: #ff0000;
   }
-  
+
   nav ul li:nth-child(4) a i {
     color: #ffffff;
   }
@@ -546,7 +533,7 @@ nav ul li:nth-child(22) a:hover i {
   nav ul li:nth-child(9) a {
     background-color: #ff9900;
   }
-  
+
   nav ul li:nth-child(9) a i {
     color: #000000;
   }
@@ -554,7 +541,7 @@ nav ul li:nth-child(22) a:hover i {
   nav ul li:nth-child(19) a:hover {
     background-color: white;
   }
-  
+
   nav ul li:nth-child(19) a i {
     content: url(/assets/heather-icons/aliexpress-hover.svg);
     width: 40px;
@@ -568,6 +555,4 @@ nav ul li:nth-child(22) a:hover i {
   nav ul {
     justify-content: space-evenly;
   }
-
 }
-
