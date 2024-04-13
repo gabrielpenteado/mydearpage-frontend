@@ -356,15 +356,15 @@ nav ul li:nth-child(22) a:hover i {
 }
 
 /* MEDIA QUERIES */
-@media (max-width: 1366px) {
+@media (max-width: 1444px) {
   nav ul li a {
-    width: 60px;
-    height: 60px;
+    width: 56px;
+    height: 56px;
   }
 
   nav ul li {
     list-style: none;
-    font-size: 40px;
+    font-size: 36px;
   }
 
   .fa-google {
@@ -380,7 +380,7 @@ nav ul li:nth-child(22) a:hover i {
   }
 
   .fa-whatsapp {
-    font-size: 46px;
+    font-size: 42px;
   }
 
   .fa-amazon {
@@ -388,12 +388,12 @@ nav ul li:nth-child(22) a:hover i {
   }
 
   .fa-facebook-f {
-    font-size: 46px;
-    padding-top: 10px;
+    font-size: 44px;
+    padding-top: 6px;
   }
 
   .fa-yahoo {
-    font-size: 46px;
+    font-size: 40px;
   }
 
   .fa-wikipedia-w {
@@ -401,8 +401,8 @@ nav ul li:nth-child(22) a:hover i {
   }
 
   .fa-telegram-plane {
-    font-size: 45px;
-    padding-right: 8px;
+    font-size: 42px;
+    padding-right: 2px;
   }
 
   .fa-reddit-alien {
@@ -411,16 +411,16 @@ nav ul li:nth-child(22) a:hover i {
 
   .githubHeader {
     width: 50px;
-    padding-top: 6px;
+    padding-top: 4px;
   }
 
   .fa-instagram {
-    font-size: 46px;
+    font-size: 44px;
   }
 
   .fa-pinterest-p {
     font-size: 48px;
-    padding-top: 8px;
+    padding-top: 4px;
   }
 
   .aliexpress {
