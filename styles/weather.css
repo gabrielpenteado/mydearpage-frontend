@@ -2,22 +2,22 @@
 .weather {
   display: grid;
   grid-template-areas:
-  'localization localization'
-  'submitcityname submitcityname'
-  'todayIcon todayTemperature'
-  'nextDays nextDays';
+    "localization localization"
+    "submitcityname submitcityname"
+    "todayIcon todayTemperature"
+    "nextDays nextDays";
 
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 0.7fr 3fr 3fr;
 }
 
-.local { 
+.local {
   grid-area: localization;
   position: relative;
   justify-self: center;
   align-self: center;
   font-size: 37px;
-}  
+}
 
 .submitCityName {
   grid-area: submitcityname;
@@ -49,7 +49,7 @@
 
 .inputCityName::placeholder {
   color: #ffffff;
-  font-size: 16px ;
+  font-size: 16px;
   opacity: 0.55;
 }
 
@@ -83,7 +83,7 @@
 @keyframes weatherAnimation {
   0% {
     opacity: 0;
-    transform: scale(.1);
+    transform: scale(0.1);
   }
   100% {
     opacity: 100%;
@@ -138,32 +138,26 @@
 .nextDays .fa-arrows-alt-v {
   font-size: 16px;
   transform: scale(1, 2);
-  
 }
- 
+
 .nextDays .maxmin p {
   padding: 2px;
   padding-left: 8px;
 }
 
-
-
-
-
-
-
-
-
 /* MEDIA QUERIES */
-@media (max-width: 1366px) {
-
+@media (max-width: 1444px) {
   .local {
     padding: 6px;
-    font-size: 32px;
+    font-size: 30px;
+  }
+
+  .todayIcon img {
+    width: 150px;
   }
 
   .todayTemperature p {
-    font-size: 42px;
+    font-size: 34px;
   }
 
   .todayTemperature h3 {
@@ -177,12 +171,13 @@
     padding: 0 8px;
     font-size: 12px;
   }
-  
+
+  .nextDays img {
+    width: 42px;
+  }
 }
 
-
 @media (max-width: 888px) {
-
   .weather {
     grid-template-rows: none;
   }
@@ -194,16 +189,13 @@
   .nextDays {
     bottom: 20px;
   }
-
 }
 
-
 @media (max-width: 565px) {
-
   .local {
     font-size: 28px;
   }
-  
+
   .nextDays {
     padding: 0;
     right: 1px;
@@ -211,16 +203,8 @@
 }
 
 @media (max-width: 375px) {
-
   .nextDays {
     transform: scaleX(0.9) scaleY(0.9);
     right: 10px;
   }
-  
 }
-
-
-
-
-
-
