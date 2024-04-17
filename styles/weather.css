@@ -146,18 +146,18 @@
 }
 
 /* MEDIA QUERIES */
-@media (max-width: 1444px) {
+@media (max-width: 1560px) {
   .local {
     padding: 6px;
     font-size: 30px;
   }
 
   .todayIcon img {
-    width: 150px;
+    width: 160px;
   }
 
   .todayTemperature p {
-    font-size: 34px;
+    font-size: 42px;
   }
 
   .todayTemperature h3 {
@@ -173,7 +173,7 @@
   }
 
   .nextDays img {
-    width: 42px;
+    width: 60px;
   }
 }
 
