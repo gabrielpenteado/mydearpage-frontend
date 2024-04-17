@@ -356,10 +356,10 @@ nav ul li:nth-child(22) a:hover i {
 }
 
 /* MEDIA QUERIES */
-@media (max-width: 1444px) {
+@media (max-width: 1560px) {
   nav ul li a {
-    width: 56px;
-    height: 56px;
+    width: 60px;
+    height: 60px;
   }
 
   nav ul li {
