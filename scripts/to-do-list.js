@@ -109,7 +109,7 @@ todoStore.forEach((item, index) => {
 // LIMIT TO-DO ACCORDING TO SCREEN SIZE RESOLUTION
 let limitToDos;
 
-if (window.matchMedia("(min-width: 1560px)").matches) {
+if (window.matchMedia("(max-width: 1560px)").matches) {
     limitToDos = 7;
 } else {
     limitToDos = 9;
