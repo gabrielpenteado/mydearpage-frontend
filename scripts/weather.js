@@ -88,9 +88,26 @@ const getTodayWeather = async (position) => {
         body: JSON.stringify(coord)
     };
 
-    const response = await fetch('https://mydearpage-api.vercel.app/onload', options);
+    const response = await fetch('/onload', options);
     const data = await response.json();
     // console.log(data);
+
+    async function getLocation(lat, lon) {
+        try {
+            const response = await fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${lon}`);
+            const data = await response.json();
+
+            const city = data.city;
+            const country = data.countryCode;
+
+            return { city, country };
+
+        } catch (error) {
+            console.error('Erro ao obter dados de geolocalização:', error);
+        }
+    }
+
+    const localization = await getLocation(lat, lon);
 
     // HANDLE REQUEST ERRORS
     if (data.cod === '404' || data.cod === '400') {
@@ -109,42 +126,74 @@ const getTodayWeather = async (position) => {
         })
     }
 
-    const { temp, humidity } = data.today.main;
-    const { icon } = data.today.weather[0];
+    const now = new Date();
+    const hour = now.getHours();
+
+    const { weatherCode, temperature2m, relativeHumidity2m } = data.today;
+
     const todayData = {
-        temperature: Math.round(temp),
-        humidity: Math.round(humidity),
-        icon: icon
+        hour: hour,
+        temperature: Math.round(temperature2m),
+        humidity: Math.round(relativeHumidity2m),
+        weatherCode: weatherCode
     };
+
+    const selectIcon = (weatherCode, hour) => {
+
+        if (weatherCode === 0 && hour < 18) {
+            return "01d";
+        } else if (weatherCode === 0 && hour >= 18) {
+            return "01n";
+        } else if (weatherCode === 45 || weatherCode === 48) {
+            return "50d";
+        } else if (weatherCode >= 50 && weatherCode <= 60) {
+            return "09n";
+        } else if ((weatherCode === 1 || weatherCode === 2 || weatherCode === 3) && hour < 18) {
+            return "03d";
+        } else if ((weatherCode === 1 || weatherCode === 2 || weatherCode === 3) && hour >= 18) {
+            return "03n";
+        } else if ((weatherCode >= 70 && weatherCode <= 79) || weatherCode === 85 || weatherCode === 86) {
+            return "13n";
+        } else if ((weatherCode >= 60 && weatherCode <= 69) || (weatherCode >= 80 && weatherCode <= 82)) {
+            return "10n";
+        } else if (weatherCode >= 95 && weatherCode <= 99) {
+            return "11n";
+        } else {
+            return "unknown";
+        }
+    };
+
 
     // SPIN LOADING OFF
     searchIcon.classList.remove("fas", "fa-circle-notch", "fa-spin");
     searchIcon.classList.add("fa", "fa-search");
 
     // DISPLAY WEATHER TODAY
+    // console.log(localization);
     animationIn();
-    local.textContent = `${data.today.name} - ${data.today.sys.country}`;
+    local.textContent = `${localization.city} - ${localization.country}`;
     todayDegree.textContent = todayData.temperature;
     todayInformations.textContent = todayData.humidity;
-    todayIcon.innerHTML = `<img src="/assets/weather-icons/${icon}.svg" alt="todayicon">`;
+    todayIcon.innerHTML = `<img src="/assets/weather-icons/${selectIcon(todayData.weatherCode, todayData.hour)}.svg" alt="todayicon">`;
 
     // GET MAX AND MIN TEMP FROM NEXT DAYS
-    const arrMaxMin = data.nextDays.daily.map((item, index) => `
+    // console.log(data.nextDays);
+
+    const arrMaxMin = data.nextDays.map((item, index) => `
       <div>
-        <p class="dayOfWeek">${weekDay[new Date(item.dt * 1000).getDay()]}</p>
+        <p class="dayOfWeek">${weekDay[item.dayOfWeek]}</p>
         <div class="nextDayIcon${index}">
-          <img src="/assets/weather-icons/${item.weather[0].icon}.svg"
-          alt="nextdaysicons">
-        </div>
+            <img src="/assets/weather-icons/${selectIcon(item.weatherCode, 0)}.svg" alt = "nextdaysicons">
+        </div >
         <div class="maxmin">
-          <i class="fas fa-arrows-alt-v"></i>
-          <div>
-            <p class="max"><span>${Math.round(item.temp.max)}°C</span></p>
-            <p class="min"><span>${Math.round(item.temp.min)}°C</span></p>
-          </div>
+            <i class="fas fa-arrows-alt-v"></i>
+            <div>
+                <p class="max"><span>${Math.round(item.tempMax)}°C</span></p>
+                <p class="min"><span>${Math.round(item.tempMin)}°C</span></p>
+            </div>
         </div> 
-      </div>
-    `).slice(1, 7).join('');
+      </div >
+    `).slice(0, 6).join('');
     // console.log(arrMaxMin)
 
     //DISPLAY WEATHER OF NEXT DAYS
@@ -172,7 +221,7 @@ const getWeatherByCityName = async (event) => {
             },
             body: JSON.stringify(cityNamecountryCode)
         };
-        const response = await fetch('https://mydearpage-api.vercel.app/cityname', options);
+        const response = await fetch('/cityname', options);
         const data = await response.json();
         // console.log(data);
 
@@ -181,8 +230,8 @@ const getWeatherByCityName = async (event) => {
             alertPopUpIconChange();
 
             alertPopUp.style.display = 'flex';
-            alertMessage.innerHTML = `<h1>${data.cod} - ${data.message}.
-            Please, type city name again.</h1>`;
+            alertMessage.innerHTML = `< h1 > ${data.cod} - ${data.message}.
+Please, type city name again.</h1 > `;
 
             freezePage2();
             resetCity();
@@ -193,14 +242,43 @@ const getWeatherByCityName = async (event) => {
             })
         }
 
-        const { temp, humidity } = data.today.main;
-        const { icon } = data.today.weather[0];
+        const now = new Date();
+        const hour = now.getHours();
+
+        const { weatherCode, temperature2m, relativeHumidity2m } = data.today;
+
         const todayData = {
-            temperature: Math.round(temp),
-            humidity: Math.round(humidity),
-            icon: icon
+            hour: hour,
+            temperature: Math.round(temperature2m),
+            humidity: Math.round(relativeHumidity2m),
+            weatherCode: weatherCode
         };
         // console.log(todayData);
+
+        const selectIcon = (weatherCode, hour) => {
+
+            if (weatherCode === 0 && hour < 18) {
+                return "01d";
+            } else if (weatherCode === 0 && hour >= 18) {
+                return "01n";
+            } else if (weatherCode === 45 || weatherCode === 48) {
+                return "50d";
+            } else if (weatherCode >= 50 && weatherCode <= 60) {
+                return "09n";
+            } else if ((weatherCode === 1 || weatherCode === 2 || weatherCode === 3) && hour < 18) {
+                return "03d";
+            } else if ((weatherCode === 1 || weatherCode === 2 || weatherCode === 3) && hour >= 18) {
+                return "03n";
+            } else if ((weatherCode >= 70 && weatherCode <= 79) || weatherCode === 85 || weatherCode === 86) {
+                return "13n";
+            } else if ((weatherCode >= 60 && weatherCode <= 69) || (weatherCode >= 80 && weatherCode <= 82)) {
+                return "10n";
+            } else if (weatherCode >= 95 && weatherCode <= 99) {
+                return "11n";
+            } else {
+                return "unknown";
+            }
+        };
 
         // SPIN LOADING OFF
         searchIcon.classList.remove("fas", "fa-circle-notch", "fa-spin");
@@ -208,31 +286,31 @@ const getWeatherByCityName = async (event) => {
 
         // DISPLAY WEATHER TODAY TYPING CITY
         animationIn();
-        local.textContent = `${data.today.name} - ${data.today.sys.country}`;
+        // console.log(localization);
+        animationIn();
+        local.textContent = `${data.local.city} - ${data.local.country}`;
         todayDegree.textContent = todayData.temperature;
         todayInformations.textContent = todayData.humidity;
-        todayIcon.innerHTML = `<img src="/assets/weather-icons/${todayData.icon}.svg" 
-        alt="todayicon">`;
+        todayIcon.innerHTML = `<img src="/assets/weather-icons/${selectIcon(todayData.weatherCode, todayData.hour)}.svg" alt="todayicon">`;
         // CLEAR INPUT AFTER SUBMIT
         inputCityName.value = '';
 
         //  GET MAX AND MIN TEMP FROM EACH DAY TYPING CITY NAME
-        const arrMaxMin = data.nextDays.daily.map((item, index) => `
-      <div class="day${[index]}">
-        <p class="dayOfWeek">${weekDay[new Date(item.dt * 1000).getDay()]}</p>
+        const arrMaxMin = data.nextDays.map((item, index) => `
+      <div>
+        <p class="dayOfWeek">${weekDay[item.dayOfWeek]}</p>
         <div class="nextDayIcon${index}">
-          <img src="/assets/weather-icons/${item.weather[0].icon}.svg"
-          alt="nextdaysicons">
-        </div>
+            <img src="/assets/weather-icons/${selectIcon(item.weatherCode, 0)}.svg" alt = "nextdaysicons">
+        </div >
         <div class="maxmin">
-          <i class="fas fa-arrows-alt-v"></i>
-          <div>
-            <p class="max"><span>${Math.round(item.temp.max)}°C</span></p>
-            <p class="min"><span>${Math.round(item.temp.min)}°C</span></p>
-          </div>
+            <i class="fas fa-arrows-alt-v"></i>
+            <div>
+                <p class="max"><span>${Math.round(item.tempMax)}°C</span></p>
+                <p class="min"><span>${Math.round(item.tempMin)}°C</span></p>
+            </div>
         </div> 
-      </div>
-      `).slice(1, 7).join('');
+      </div >
+    `).slice(0, 6).join('');
         // console.log(arrMaxMin);
 
         //DISPLAY WEATHER OF NEXT DAYS TYPING CITY NAME
