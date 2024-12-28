@@ -193,7 +193,7 @@ const getTodayWeather = async (position) => {
             </div>
         </div> 
       </div >
-    `).slice(0, 6).join('');
+    `).join('');
     // console.log(arrMaxMin)
 
     //DISPLAY WEATHER OF NEXT DAYS
@@ -310,7 +310,7 @@ Please, type city name again.</h1 > `;
             </div>
         </div> 
       </div >
-    `).slice(0, 6).join('');
+    `).join('');
         // console.log(arrMaxMin);
 
         //DISPLAY WEATHER OF NEXT DAYS TYPING CITY NAME
