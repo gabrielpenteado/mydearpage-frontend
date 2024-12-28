@@ -262,7 +262,7 @@ Please, type city name again.</h1 > `;
             } else if (weatherCode === 0 && hour >= 18) {
                 return "01n";
             } else if (weatherCode === 45 || weatherCode === 48) {
-                return "50d";
+                return "04n";
             } else if (weatherCode >= 50 && weatherCode <= 60) {
                 return "09n";
             } else if ((weatherCode === 1 || weatherCode === 2 || weatherCode === 3) && hour < 18) {
